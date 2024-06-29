@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en"> 
+ <head>
+ <title>zach's shop</title>
+ <meta charset = "utf-8">
+ <style>
+ .hiddy{
+ visibility: hidden;
+ }
+ .mids{
+ margin: auto;
+ }
+ .mid{
+ text-align: center;
+ }
+ .pics{
+   margin-left: 300px;
+  width:550px; height:400px;
+ }
+ .pics2{
+ width:550px; height:400px;
+ }
+  .buton{
+   margin-left: 300px;
+  width:550px; height:50px;
+ }
+ .buton2{
+ width:550px; height:50px;
+ }
+ .geryout{
+ opacity: 0.01;
+ filter: grayscale(50%);
+ }
+ .test{
+ margin-left: auto;
+ width:100px; height:150px;
+ filter:opacity(30%);
+ }
+ .test2{
+  margin-left: 300px;
+ width:100px; height:150px;
+ filter:opacity(30%);
+ }
+ .letsee{
+ width: 30%;
+ }
+  .letsee2{
+ width: 30%;
+ display: inline-block; 
+ text-align: center;
+ }
+ .diver{
+  display: inline-block; 
+ width: 80%;
+ padding:10px;
+ }
+ .diver2{
+    display: inline-block;  
+    vertical-align:top;
+	width: 15%;
+ }
+ .hogs{
+ width:100%; height:40px;
+ }
+ </style>
+ </head>
+ <body>
+ <script>
+ 
+ var checker=1;
+ function remove(sam){
+ console.log(sam);
+ var temp =  document.getElementById('checkout').innerHTML;
+  var subber = parseFloat(document.getElementById(document.getElementById(sam).value).value);
+ var temp2 = parseFloat(document.getElementById('coster').value);
+ var tots=temp2-subber;
+ document.getElementById('coster').value = tots;
+ document.getElementById(sam).remove();
+ 
+ }
+ function addme(name){
+ console.log(name);
+ var temp =  document.getElementById('checkout').innerHTML;
+ document.getElementById('checkout').innerHTML= temp+'<input type="button" class="hogs" id="but'+checker+'" value="'+name+'" onclick ="remove(\'but'+checker+'\')" >';
+ checker++;
+ var adder = parseFloat(document.getElementById(name).value);
+ var temp2 = parseFloat(document.getElementById('coster').value);
+ var tots=adder+temp2
+ document.getElementById('coster').value = tots;
+ }
+ 
+ function testy(sam, gert){
+ 
+ }
+ </script>
+ 
+  <div>
+ <h1 class="mid"><b> WELCOME TO MY CATOLOG</b></h1>
+ </div>
+ <div id="1">
+ <div class="diver">
+ <div>
+ 
+<img class="letsee" src="pipe.png"> 
+<img class="letsee" src="pipe2.png">
+<img class="letsee" src="pipe3.png"><br>
+ </div>
+ <div>
+<p class="letsee2">$15.00</p>
+<p class="letsee2">$20.00</p>
+<p class="letsee2">$10.00</p>
+   <input type="text" class="hiddy" id="red pipe: $15.00" value="15.00"><br>
+   <input type="text" class="hiddy" id="grey pipe: $20.00" value="20.00"><br>
+   <input type="text" class="hiddy" id="green pipe: $10.00" value="10.00"><br>
+ </div>
+   <div>
+<input type="button" class="letsee" value="Add red pipe to cart" onclick ="addme('red pipe: $15.00')" >
+<input type="button" class="letsee" value="Add grey pipe to cart" onclick ="addme('grey pipe: $20.00')" >
+<input type="button" class="letsee" value="Add green pipe to cart" onclick ="addme('green pipe: $10.00')" >
+
+ </div>
+</div>
+<div class="diver2">
+<h2 class="mid"><b> CHECKOUT</b></h2>
+<div id="checkout">
+</div>
+<div>
+<h3 class="mid"><b>Estimated cost</b></h3>
+ <input type="text" id="coster" value="00.00"><br>
+</div>
+</div>
+</div>
+ </body>
+ 
